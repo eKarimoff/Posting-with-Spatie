@@ -14,11 +14,13 @@ use App\Http\Controllers\PostController;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('auth.login');
+});
+Route::get('/home', function () {
+    return view('auth.login');
 });
 
 Auth::routes();
 
-Route::get('/home', [PostController::class, 'index'])->name('post');
 
 Route::resource('/post',PostController::class);
